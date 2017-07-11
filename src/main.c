@@ -70,7 +70,7 @@ static void polyprint(struct mat m)
 		if (fabs(m.rows[i]) < 0.000001)
 			continue;
 
-		if (i != fst)
+		if (i != fst || m.rows[i] < 0)
 			printf(" %c ", (m.rows[i] >= 0) ? '+' : '-');
 		printxexp(fabs(m.rows[i]), (int)m.numrows - (i + 1));
 	}
