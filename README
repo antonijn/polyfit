@@ -1,0 +1,38 @@
+
+	Usage
+
+  $ make
+  $ ./polyfit '0,1' '1,0'
+  P(x) =  - 1.000000 x + 1.000000
+  $ ./polyfit '-1,0' '0,0' '1,0'
+  P(x) = 0.500000 x^2 + 0.500000 x
+
+
+	Method
+
+Given 𝑛 points (𝑥ᵢ, 𝑦ᵢ) ∈ 𝐑², for 1 ≤ 𝑖 ≤ 𝑛, with the only
+requirement that 𝑥ᵢ = 𝑥ⱼ implies 𝑖 = 𝑗, there exists a unique
+polynomial 𝑃 of degree strictly smaller than 𝑛 such that
+𝑃(𝑥ᵢ) = 𝑦ᵢ for all 1 ≤ 𝑖 ≤ 𝑛.
+
+This polynomial can be found using linear algebra. Write
+𝑃(𝑥) = 𝑎₀ + 𝑎₁ 𝑥 + ⋯ + 𝑎ₙ₋₁ 𝑥ⁿ⁻¹. The requirement 𝑃(𝑥ᵢ) = 𝑦ᵢ
+is now a system of linear equations:
+
+  𝑎₀ + 𝑎₁ 𝑥₁ + ⋯ + 𝑎ₙ₋₁ 𝑥₁ⁿ⁻¹ = 𝑦₁
+  𝑎₀ + 𝑎₁ 𝑥₂ + ⋯ + 𝑎ₙ₋₁ 𝑥₂ⁿ⁻¹ = 𝑦₂
+               ⋮
+  𝑎₀ + 𝑎₁ 𝑥ₙ + ⋯ + 𝑎ₙ₋₁ 𝑥ₙⁿ⁻¹ = 𝑦ₙ
+
+If we define 𝐱ᵏ, 𝐲 ∈ 𝐑ⁿ by 𝐱ᵏ = (𝑥ᵢᵏ,…,𝑥ₙᵏ)ᵀ, and
+𝐲 = (𝑦ᵢ,…,𝑦ₙ)ᵀ, then this system reduces to:
+
+  𝑎₀ 𝐱⁰ + ⋯ + 𝑎ₙ₋₁ 𝐱ⁿ⁻¹ = 𝐲
+
+Define now an 𝑛 by 𝑛 matrix 𝐗 by 𝐗ᵢ₊₁ = 𝐱ⁱ, and 𝐚 ∈ 𝐑ⁿ by
+𝐚 = (𝑎₀,…,𝑎ₙ₋₁)ᵀ, then the system collapses to:
+
+  𝐗 𝐚 = 𝐲
+
+Because 𝑥ᵢ ≠ 𝑥ⱼ for 𝑖 ≠ 𝑗, the matrix 𝐗 is invertible.
+Then 𝐚 = 𝐗⁻¹𝐲, yielding values for the coefficients of 𝑃.
