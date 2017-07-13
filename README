@@ -24,15 +24,15 @@ is now a system of linear equations:
                ⋮
   𝑎₀ + 𝑎₁ 𝑥ₙ + ⋯ + 𝑎ₙ₋₁ 𝑥ₙⁿ⁻¹ = 𝑦ₙ
 
-If we define 𝐱ᵏ, 𝐲 ∈ 𝐑ⁿ by 𝐱ᵏ = (𝑥ᵢᵏ,…,𝑥ₙᵏ)ᵀ, and
-𝐲 = (𝑦ᵢ,…,𝑦ₙ)ᵀ, then this system reduces to:
+If we define 𝒙ᵏ, 𝒚 ∈ 𝐑ⁿ by 𝒙ᵏ = (𝑥ᵢᵏ,…,𝑥ₙᵏ)ᵀ, and
+𝒚 = (𝑦ᵢ,…,𝑦ₙ)ᵀ, then this system reduces to:
 
-  𝑎₀ 𝐱⁰ + ⋯ + 𝑎ₙ₋₁ 𝐱ⁿ⁻¹ = 𝐲
+  𝑎₀ 𝒙⁰ + ⋯ + 𝑎ₙ₋₁ 𝒙ⁿ⁻¹ = 𝒚
 
-Define now an 𝑛 by 𝑛 matrix 𝐗 by 𝐗ᵢ₊₁ = 𝐱ⁱ, and 𝐚 ∈ 𝐑ⁿ by
-𝐚 = (𝑎₀,…,𝑎ₙ₋₁)ᵀ, then the system collapses to:
+Define now an 𝑛 by 𝑛 matrix 𝑿 by 𝑿ᵢ₊₁ = 𝒙ⁱ, and 𝒂 ∈ 𝐑ⁿ by
+𝒂 = (𝑎₀,…,𝑎ₙ₋₁)ᵀ, then the system collapses to:
 
-  𝐗 𝐚 = 𝐲
+  𝑿 𝒂 = 𝒚
 
-Because 𝑥ᵢ ≠ 𝑥ⱼ for 𝑖 ≠ 𝑗, the matrix 𝐗 is invertible.
-Then 𝐚 = 𝐗⁻¹𝐲, yielding values for the coefficients of 𝑃.
+Because 𝑥ᵢ ≠ 𝑥ⱼ for 𝑖 ≠ 𝑗, the matrix 𝑿 is invertible.
+Then 𝒂 = 𝑿⁻¹𝒚, yielding values for the coefficients of 𝑃.
